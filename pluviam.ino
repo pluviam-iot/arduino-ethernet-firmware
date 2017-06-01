@@ -24,7 +24,7 @@
 */
 
 
-#define DEBUG_SERIAL true
+#define DEBUG_SERIAL false
 
 
 //libs
