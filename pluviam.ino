@@ -24,18 +24,18 @@
 */
 
 
-#define DEBUG_SERIAL false
+#define DEBUG_SERIAL true
 
 
 //libs
 #include <Wire.h>
 
 //led pins
-#define LED_PWR 9
-#define LED_ETH 8
-#define LED_CPU 7
-#define LED_ERR1 6
-#define LED_ERR2 5
+#define LED_PWR 4
+#define LED_ETH 5
+#define LED_CPU 6
+#define LED_ERR1 7
+#define LED_ERR2 7
 
 
 void setup() {
