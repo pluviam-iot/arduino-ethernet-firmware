@@ -21,9 +21,9 @@
 EthernetClient client;
 
 const char serverUrl[] = "backyard.pluvi.am";
-const String stationId = "57d67aec6a806dc1b3b55529";
-const String token = "36hfgusemg4hf2pc";
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFF, 0xEF };
+const String stationId = "595b0c4b9ba2f913fe2153ba";
+const String token = "vdwywbv721wyt5kw";
+byte mac[] = { 0xDE, 0xAD, 0xBB, 0x4F, 0xF3, 0xEF };
 
 String postData = "";
 

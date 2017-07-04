@@ -65,7 +65,7 @@ void setup() {
 
 #if DEBUG_SERIAL == true
   Serial.begin(57600);
-  Serial.println(F("Pluviam firmware 0.91"));
+  Serial.println(F("Pluviam firmware 1.1"));
   Serial.print(F("Starting Wire..."));
 #endif
  
@@ -76,7 +76,7 @@ void setup() {
   
 #if DEBUG_SERIAL == true
   Serial.println("[OK]");
-  Serial.print(F("Calibrating BMP085..."));
+  Serial.print(F("Calibrating BMP085 and 180..."));
 #endif
 
   digitalWrite(LED_ERR1, HIGH);
