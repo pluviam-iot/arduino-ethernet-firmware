@@ -16,7 +16,7 @@
 //options
 #define BLOCK_INTERVAL 10000 // 10 secs - do not change it!
 #define BLOCK_COUNT 6
-#define INIT_DELAY 10000
+#define INIT_DELAY 60000
 
 unsigned long lastBlockTime = INIT_DELAY;
 int blockCount = 0;
@@ -40,7 +40,7 @@ boolean sendInfo(){
  }
 }
 
-int getInitDelay(){
+unsigned long getInitDelay(){
   return INIT_DELAY;
 }
 

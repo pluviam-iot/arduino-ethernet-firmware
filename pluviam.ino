@@ -83,7 +83,33 @@ void setup() {
   bmp085Calibration(); //uri1
   digitalWrite(LED_ERR1, LOW);
   
-#if DEBUG_SERIAL == true
+  boolean initialized = false;
+  unsigned long initialDelay = getInitDelay();
+  unsigned long initTime = millis();
+  boolean powerOn = false;
+
+  //delay to initialize all sensors and ethernet
+  while (!initialized) { 
+    initTime = millis();
+    if (initTime >= initialDelay) {
+      initialized = true;
+    }
+    if ((initTime % 300) == 0)
+    {
+      Serial.print(initTime);
+      Serial.print(" - ");
+      Serial.println(initialDelay);
+      if (powerOn)
+        digitalWrite(LED_PWR, LOW);
+      else
+        digitalWrite(LED_PWR, HIGH);
+      powerOn = !powerOn;
+      delay(1);
+    }
+  }
+  // digitalWrite(LED_PWR, LOW);
+
+  #if DEBUG_SERIAL == true
   Serial.println("[OK]");
   Serial.print(F("Initializing ethernet..."));
 #endif
@@ -101,29 +127,6 @@ void setup() {
   Serial.print(F("Waiting sensors... "));
   printRam();
 #endif
-
-  boolean initialized = false;
-  int initialDelay = getInitDelay();
-  unsigned long initTime = millis();
-  boolean powerOn = false;
-
-  //delay to initialize all sensors and ethernet
-  while (!initialized) { 
-    initTime = millis();
-    if (initTime >= initialDelay) {
-      initialized = true;
-    }
-    if ((initTime % 300) == 0)
-    {
-      if (powerOn)
-        digitalWrite(LED_PWR, LOW);
-      else
-        digitalWrite(LED_PWR, HIGH);
-      powerOn = !powerOn;
-      delay(1);
-    }
-  }
-  digitalWrite(LED_PWR, LOW);
   
 #if DEBUG_SERIAL == true
   Serial.println("[OK]");
